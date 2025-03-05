@@ -11,12 +11,12 @@ The configuration comes from the [instructions](https://github.com/farcasterxyz/
 - K8s Cluster
 - K8s Deployment running snapchain node
 - Persistent disk storage for snapchain rocks db
-- K8s Service for snapchain HTTP & RPC (3381 & 3383)
-- K8s Service for snapchain gossip (3382)
+- K8s Service and IP address for snapchain HTTP & RPC (3381 & 3383)
+- K8s Service and IP address for snapchain gossip (3382)
 
 TODOs:
 - DNS config
-- resolution for separate IPs?
+- resolution for separate IPs (nginx?)
 
 
 ## Steps to Deploy
