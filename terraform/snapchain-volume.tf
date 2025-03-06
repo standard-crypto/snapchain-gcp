@@ -28,7 +28,7 @@ resource "kubernetes_persistent_volume_claim" "snapchain" {
     access_modes       = ["ReadWriteOnce"]
     resources {
       requests = {
-        storage = "100Gi"
+        storage = "1000Gi"
       }
     }
     volume_name = kubernetes_persistent_volume.snapchain.metadata.0.name
@@ -41,7 +41,7 @@ resource "kubernetes_persistent_volume" "snapchain" {
   }
   spec {
     capacity = {
-      storage = "100Gi"
+      storage = "1000Gi"
     }
     storage_class_name = kubernetes_storage_class.snapchain.metadata[0].name
     access_modes       = ["ReadWriteOnce"]
