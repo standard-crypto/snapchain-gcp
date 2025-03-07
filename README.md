@@ -28,7 +28,7 @@ The configuration comes from the [instructions](https://github.com/farcasterxyz/
 1. Create a Terraform workspace
 2. Update [`terraform/backend.tf`](./terraform/backend.tf) with your Terraform org and workspace
 3. Authenticate Terraform with GCP ([guide](https://cloud.google.com/docs/terraform/authentication))
-4. Create `terraform.tfvars` and fill in the values from [`example.terraform.tfvars](./terraform/example.terraform.tfvars)
+4. Create `terraform.tfvars` and fill in the values from [`example.terraform.tfvars`](./terraform/example.terraform.tfvars)
 5. Run `cd terraform & terraform init`
 
 ### Deploying
