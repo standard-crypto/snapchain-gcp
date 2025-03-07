@@ -13,15 +13,15 @@ The configuration comes from the [instructions](https://github.com/farcasterxyz/
 - Persistent disk storage for snapchain rocks db
 - K8s Service and IP address for snapchain HTTP & RPC (3381 & 3383)
 - K8s Service and IP address for snapchain gossip (3382)
-
-TODOs:
-- DNS config
-- resolution for separate IPs (nginx?)
-
+- GCP DNS Zone & DNS Record (optional)
 
 ## Steps to Deploy
 
-**Prequisites: Having GCP and Terraform accounts**
+### Prerequisites
+
+1. Have a Google Cloud account
+2. Have a Terraform account
+3. Own a top level domain name (optional)
 
 ### Setup / Config
 
@@ -35,3 +35,6 @@ TODOs:
 
 1. Ensure the config in [`snapchain-config.tf`](./terraform/snapchain-config.tf) is correct (current config comes from [farcasterxyz/snapchain/docker-compose.read.yml](https://github.com/farcasterxyz/snapchain/blob/main/docker-compose.read.yml))
 2. Run `cd terraform & terraform apply`
+
+### DNS (optional)
+Once finished, point your top level domain to the NameServers of DNS zone created.

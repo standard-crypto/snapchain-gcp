@@ -25,7 +25,7 @@ resource "kubernetes_deployment" "snapchain" {
           resources {
             requests = {
               memory = "16Gi"
-              cpu = "4"
+              cpu    = "4"
             }
           }
           volume_mount {

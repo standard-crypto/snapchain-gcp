@@ -57,3 +57,8 @@ output "gossip-ip" {
   description = "The gossip IP address for the running snapchain node"
   value       = google_compute_address.snapchain-udp-ip.address
 }
+
+output "node-url" {
+  description = "The URL for the running snapchain node"
+  value       = var.enable_dns ? google_dns_record_set.dns-recordset["enabled"].name : null
+}

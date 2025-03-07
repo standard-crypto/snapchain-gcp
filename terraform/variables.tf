@@ -17,3 +17,20 @@ variable "name" {
   type    = string
   default = "snapchain"
 }
+
+variable "enable_dns" {
+  description = "Set to true to enable Google Cloud DNS"
+  type        = bool
+  default     = false
+}
+
+variable "dns-name" {
+  type        = string
+  description = "Top Level DNS Name"
+  default     = ""
+}
+
+variable "subdomain" {
+  type    = string
+  default = "snapchain"
+}
