@@ -46,21 +46,3 @@ resource "google_compute_address" "snapchain-udp-ip" {
   region       = var.region
   network_tier = "STANDARD"
 }
-/*
-resource "google_compute_firewall" "snapchain-firewall" {
-  name    = "${var.name}-firewall"
-  network = "default"
-
-  allow {
-    protocol = "icmp"
-  }
-
-  allow {
-    protocol = "tcp"
-    ports    = ["3381", "3382", "3383"]
-  }
-
-  source_ranges = ["0.0.0.0/0"]
-  target_tags   = [var.name, "${var.name}-tcp", "${var.name}-udp"]
-}
-*/
