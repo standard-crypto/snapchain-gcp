@@ -58,7 +58,7 @@ output "gossip-ip" {
   value       = google_compute_address.snapchain-udp-ip.address
 }
 
-output "node-url" {
-  description = "The URL for the running snapchain node"
-  value       = var.enable_dns ? google_dns_record_set.dns-recordset["enabled"].name : null
+output "dns-records" {
+  description = "List of all created DNS records"
+  value       = [for entry in google_dns_record_set.dns-recordset : entry.name]
 }

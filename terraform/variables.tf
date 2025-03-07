@@ -34,3 +34,13 @@ variable "subdomain" {
   type    = string
   default = "snapchain"
 }
+
+variable "dns-config" {
+  description = "List of DNS zones and their subdomains"
+  type = list(object({
+    name       = string
+    dns-name   = string
+    subdomains = list(string)
+  }))
+  default = []
+}
