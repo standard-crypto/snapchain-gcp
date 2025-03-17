@@ -25,8 +25,8 @@ resource "kubernetes_config_map" "snapchain-config" {
     num_shards = 2
 
     [snapshot]
-    endpoint_url = ""
-    load_db_from_snapshot=false
+    endpoint_url = "https://e1f9f185c6e63471dd39f96abd3413c4.r2.cloudflarestorage.com"
+    load_db_from_snapshot=true
     EOT
   }
 }
