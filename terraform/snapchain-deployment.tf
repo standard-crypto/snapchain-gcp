@@ -21,6 +21,7 @@ resource "kubernetes_deployment" "snapchain" {
       spec {
         container {
           image = "farcasterxyz/snapchain:latest"
+          image_pull_policy = "Always"
           name  = "${var.name}-container"
           resources {
             requests = {
