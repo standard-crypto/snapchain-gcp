@@ -2,7 +2,7 @@
 
 This repo has config for deploying a snapchain read node to GCP with kubernetes and terraform. This is in development and more updates will follow to run a full node and participate in the network.
 
-The configuration comes from the [instructions](https://github.com/farcasterxyz/snapchain?tab=readme-ov-file#running-read-node) to run a read node.
+The configuration comes from the [instructions]https://github.com/farcasterxyz/snapchain?tab=readme-ov-file#running-a-node) to run a node.
 
 ## Outputs
 
