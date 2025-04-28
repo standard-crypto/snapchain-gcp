@@ -20,15 +20,9 @@ resource "kubernetes_deployment" "snapchain" {
       }
       spec {
         container {
-          image = "farcasterxyz/snapchain:latest"
+          image             = "farcasterxyz/snapchain:latest"
           image_pull_policy = "Always"
-          name  = "${var.name}-container"
-          resources {
-            requests = {
-              memory = "16Gi"
-              cpu    = "4"
-            }
-          }
+          name              = "${var.name}-container"
           volume_mount {
             name       = "config-volume"
             mount_path = "/home/node/app/config.toml"
@@ -36,7 +30,7 @@ resource "kubernetes_deployment" "snapchain" {
           }
           volume_mount {
             name       = var.name
-            mount_path = "/home/node/app/.rocks"
+            mount_path = "/app/data"
           }
           port {
             name           = "http"

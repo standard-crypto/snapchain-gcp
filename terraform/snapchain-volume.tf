@@ -1,7 +1,8 @@
 resource "google_compute_disk" "snapchain" {
   name = "snapchain-data"
-  type = "pd-ssd"
+  type = "pd-balanced"
   zone = var.zone
+  size = 2000
 }
 
 resource "kubernetes_storage_class" "snapchain" {
@@ -13,7 +14,7 @@ resource "kubernetes_storage_class" "snapchain" {
   allow_volume_expansion = true
   reclaim_policy         = "Retain"
   parameters = {
-    "type"             = "pd-ssd"
+    "type"             = "pd-balanced"
     "fstype"           = "ext4"
     "replication-type" = "none"
   }
@@ -28,7 +29,7 @@ resource "kubernetes_persistent_volume_claim" "snapchain" {
     access_modes       = ["ReadWriteOnce"]
     resources {
       requests = {
-        storage = "1000Gi"
+        storage = "2000Gi"
       }
     }
     volume_name = kubernetes_persistent_volume.snapchain.metadata.0.name
@@ -41,7 +42,7 @@ resource "kubernetes_persistent_volume" "snapchain" {
   }
   spec {
     capacity = {
-      storage = "1000Gi"
+      storage = "2000Gi"
     }
     storage_class_name = kubernetes_storage_class.snapchain.metadata[0].name
     access_modes       = ["ReadWriteOnce"]
